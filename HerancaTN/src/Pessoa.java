@@ -1,10 +1,19 @@
 import java.sql.Date;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo", length = 1, discriminatorType = DiscriminatorType.STRING)
+
 public class Pessoa implements Identificavel{
+	
+	
 @Id
 private Long id;
 private String Nome;
@@ -44,21 +53,6 @@ public boolean equals(Object obj) {
 	if (getClass() != obj.getClass())
 		return false;
 	Pessoa other = (Pessoa) obj;
-	if (CPF == null) {
-		if (other.CPF != null)
-			return false;
-	} else if (!CPF.equals(other.CPF))
-		return false;
-	if (NascimentoData == null) {
-		if (other.NascimentoData != null)
-			return false;
-	} else if (!NascimentoData.equals(other.NascimentoData))
-		return false;
-	if (Nome == null) {
-		if (other.Nome != null)
-			return false;
-	} else if (!Nome.equals(other.Nome))
-		return false;
 	if (id == null) {
 		if (other.id != null)
 			return false;
@@ -67,4 +61,8 @@ public boolean equals(Object obj) {
 	return true;
 }
 
+
+
 }
+
+

@@ -5,7 +5,7 @@ import javax.persistence.Persistence;
 
 public class DAO<E extends Identificavel> {
 
-	private EntityManagerFactory factory = Persistence.createEntityManagerFactory("salao");
+	private EntityManagerFactory factory = Persistence.createEntityManagerFactory("Heranca_ST");
 
 	public void save(E e) {
 		EntityManager em = factory.createEntityManager();
