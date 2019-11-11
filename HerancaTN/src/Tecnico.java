@@ -1,10 +1,13 @@
-import javax.persistence.DiscriminatorValue;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 
-//SINGLE TABLE
+//JOIN TABLE
 @Entity
-@DiscriminatorValue(value = "T")
+
+@PrimaryKeyJoinColumn(name="id")
+
 public class Tecnico extends Pessoa{
 	@Id
 	
