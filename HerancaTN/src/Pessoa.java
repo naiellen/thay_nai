@@ -9,11 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
-//JOIN TABLE
+//SINGLE TABLE
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo", length = 1, discriminatorType = DiscriminatorType.STRING)
 
-public class Pessoa implements Identificavel{	
+public class Pessoa implements Identificavel{
+	 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 

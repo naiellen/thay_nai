@@ -1,14 +1,14 @@
 
-
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.PrimaryKeyJoinColumn;
 
-//JOIN TABLE
+//SINGLE TABLE
 @Entity
-@PrimaryKeyJoinColumn(name="id")
+@DiscriminatorValue(value = "A")
 public class Aluno extends Pessoa{
     @Id
+   
 	private Integer Matricula;
 	private String Curso;
 	private String Periodo;
