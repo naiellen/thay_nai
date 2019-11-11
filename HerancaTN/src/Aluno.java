@@ -3,6 +3,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+//SINGLE TABLE
 @Entity
 @DiscriminatorValue(value = "A")
 public class Aluno extends Pessoa{
